@@ -32,7 +32,9 @@ describe("project inquiry form", () => {
 
   it("rejects a reference that is not a full link", () => {
     expect(inquirySchema.safeParse({ ...valid, reference: "youtube" }).success).toBe(false);
-    expect(inquirySchema.safeParse({ ...valid, reference: "https://youtu.be/abc" }).success).toBe(true);
+    expect(inquirySchema.safeParse({ ...valid, reference: "https://youtu.be/abc" }).success).toBe(
+      true,
+    );
   });
 
   it("addresses the email to the studio inbox with the details", () => {

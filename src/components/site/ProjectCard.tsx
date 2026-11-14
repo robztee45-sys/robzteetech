@@ -38,7 +38,12 @@ export function ProjectCard({ project, onPlay, size = "default", className }: Pr
         className,
       )}
     >
-      <div className={cn("relative w-full overflow-hidden", size === "large" ? "aspect-[16/10]" : "aspect-video")}>
+      <div
+        className={cn(
+          "relative w-full overflow-hidden",
+          size === "large" ? "aspect-[4/3] sm:aspect-[16/10]" : "aspect-[4/3] sm:aspect-video",
+        )}
+      >
         <img
           src={project.thumbnail}
           alt=""
@@ -60,7 +65,7 @@ export function ProjectCard({ project, onPlay, size = "default", className }: Pr
         ) : null}
         <div className="absolute inset-0 bg-card-scrim" />
 
-        <div className="absolute left-4 top-4 flex items-center gap-2">
+        <div className="absolute inset-x-4 top-4 flex flex-wrap items-center gap-2">
           <span className="rounded-full border border-foreground/15 bg-scrim/60 px-3 py-1 font-mono text-[0.65rem] uppercase tracking-[0.18em] text-foreground backdrop-blur-md">
             {project.category}
           </span>
@@ -69,21 +74,25 @@ export function ProjectCard({ project, onPlay, size = "default", className }: Pr
               Sample
             </span>
           ) : null}
+          {project.duration ? (
+            <span className="ml-auto font-mono text-xs text-foreground/80">
+              {project.format ? `${project.format} · ` : ""}
+              {project.duration}
+            </span>
+          ) : null}
         </div>
 
-        {project.duration ? (
-          <span className="absolute right-4 top-4 font-mono text-xs text-foreground/80">
-            {project.format ? `${project.format} · ` : ""}
-            {project.duration}
-          </span>
-        ) : null}
-
-        <span className="absolute left-1/2 top-1/2 grid size-16 -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full border border-foreground/30 bg-foreground/10 text-foreground backdrop-blur-md transition-all duration-700 ease-cinematic group-hover:scale-110 group-hover:border-primary group-hover:bg-primary group-hover:text-primary-foreground">
+        <span className="absolute left-1/2 top-[38%] grid size-14 -translate-x-1/2 -translate-y-1/2 sm:top-1/2 sm:size-16 place-items-center rounded-full border border-foreground/30 bg-foreground/10 text-foreground backdrop-blur-md transition-all duration-700 ease-cinematic group-hover:scale-110 group-hover:border-primary group-hover:bg-primary group-hover:text-primary-foreground">
           <Play className="ml-0.5 size-6 fill-current" />
         </span>
 
         <div className="absolute inset-x-0 bottom-0 p-5 md:p-6">
-          <h3 className={cn("font-display font-medium leading-tight", size === "large" ? "text-2xl md:text-3xl" : "text-xl md:text-2xl")}>
+          <h3
+            className={cn(
+              "font-display font-medium leading-tight",
+              size === "large" ? "text-2xl md:text-3xl" : "text-xl md:text-2xl",
+            )}
+          >
             {project.title}
           </h3>
           <p className="mt-2 line-clamp-2 max-w-xl text-sm text-muted-foreground">

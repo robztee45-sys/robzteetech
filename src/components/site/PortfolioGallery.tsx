@@ -19,7 +19,11 @@ export function PortfolioGallery() {
 
   return (
     <>
-      <div className="-mx-5 overflow-x-auto px-5 pb-2 md:mx-0 md:px-0" role="tablist" aria-label="Filter projects">
+      <div
+        className="-mx-5 overflow-x-auto px-5 pb-2 md:mx-0 md:px-0"
+        role="tablist"
+        aria-label="Filter projects"
+      >
         <div className="flex w-max gap-2">
           {filters.map((f) => (
             <button

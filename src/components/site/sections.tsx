@@ -6,7 +6,17 @@ import { processSteps, reasons, testimonials, tools } from "@/data/content";
 import { Reveal } from "./Reveal";
 import { SectionHeading } from "./SectionHeading";
 
-export function PageHero({ eyebrow, title, intro, children }: { eyebrow: string; title: ReactNode; intro: ReactNode; children?: ReactNode }) {
+export function PageHero({
+  eyebrow,
+  title,
+  intro,
+  children,
+}: {
+  eyebrow: string;
+  title: ReactNode;
+  intro: ReactNode;
+  children?: ReactNode;
+}) {
   return (
     <section className="relative overflow-hidden pb-16 pt-40 md:pb-24 md:pt-48">
       <div className="grid-lines pointer-events-none absolute inset-0" />
@@ -19,7 +29,9 @@ export function PageHero({ eyebrow, title, intro, children }: { eyebrow: string;
         <p className="mt-8 max-w-2xl animate-fade-up text-pretty text-lg leading-relaxed text-muted-foreground [animation-delay:240ms]">
           {intro}
         </p>
-        {children ? <div className="mt-10 animate-fade-up [animation-delay:360ms]">{children}</div> : null}
+        {children ? (
+          <div className="mt-10 animate-fade-up [animation-delay:360ms]">{children}</div>
+        ) : null}
       </div>
     </section>
   );
@@ -31,12 +43,21 @@ export function ProcessSection() {
       <div className="container-studio">
         <SectionHeading
           eyebrow="Creative Process"
-          title={<>From first idea to <span className="text-signal">final cut.</span></>}
+          title={
+            <>
+              From first idea to <span className="text-signal">final cut.</span>
+            </>
+          }
           intro="A clear, collaborative five-step workflow so you always know where your video stands."
         />
         <ol className="mt-16 grid gap-px overflow-hidden rounded-2xl border border-border bg-border md:grid-cols-5">
           {processSteps.map((step, i) => (
-            <Reveal as="li" key={step.number} delay={i * 90} className="group relative flex flex-col bg-background p-7 transition-colors duration-500 hover:bg-surface md:min-h-80">
+            <Reveal
+              as="li"
+              key={step.number}
+              delay={i * 90}
+              className="group relative flex flex-col bg-background p-7 transition-colors duration-500 hover:bg-surface md:min-h-80"
+            >
               <div className="flex items-center justify-between">
                 <span className="font-display text-5xl font-light text-foreground/15 transition-colors duration-500 group-hover:text-primary">
                   {step.number}
@@ -94,7 +115,11 @@ export function WhySection() {
         <div className="lg:sticky lg:top-32 lg:self-start">
           <SectionHeading
             eyebrow="Why Robztetech"
-            title={<>Built like a studio. <span className="text-muted-foreground">Fast like AI.</span></>}
+            title={
+              <>
+                Built like a studio. <span className="text-muted-foreground">Fast like AI.</span>
+              </>
+            }
             intro="The craft of a production house with the speed and flexibility of modern AI tools."
           />
           <Button asChild variant="hero" size="xl" className="mt-10">

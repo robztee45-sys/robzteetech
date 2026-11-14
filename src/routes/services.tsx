@@ -32,7 +32,11 @@ function ServicesPage() {
     <>
       <PageHero
         eyebrow="My Services"
-        title={<>Video for every <span className="text-signal">story & screen.</span></>}
+        title={
+          <>
+            Video for every <span className="text-signal">story & screen.</span>
+          </>
+        }
         intro="From high-converting product ads to cinematic short films, each service is shaped around your brand, audience and platform."
       >
         <Button asChild variant="hero" size="xl">

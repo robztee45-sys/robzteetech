@@ -2,7 +2,15 @@ import { ArrowUpRight } from "lucide-react";
 import type { Service } from "@/data/services";
 import { cn } from "@/lib/utils";
 
-export function ServiceCard({ service, detailed = false, className }: { service: Service; detailed?: boolean; className?: string }) {
+export function ServiceCard({
+  service,
+  detailed = false,
+  className,
+}: {
+  service: Service;
+  detailed?: boolean;
+  className?: string;
+}) {
   return (
     <article
       className={cn(

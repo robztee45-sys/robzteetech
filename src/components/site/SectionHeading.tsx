@@ -11,7 +11,14 @@ type Props = {
   action?: ReactNode;
 };
 
-export function SectionHeading({ eyebrow, title, intro, align = "left", className, action }: Props) {
+export function SectionHeading({
+  eyebrow,
+  title,
+  intro,
+  align = "left",
+  className,
+  action,
+}: Props) {
   return (
     <Reveal
       className={cn(

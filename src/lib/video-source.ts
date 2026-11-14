@@ -31,7 +31,7 @@ export function getVideoSource(url: string): VideoSource {
     };
   }
 
-  const path = trimmed.split(/[?#]/)[0].toLowerCase();
+  const path = (trimmed.split(/[?#]/)[0] ?? "").toLowerCase();
   if (/\.(mp4|webm|mov|m4v|ogg)$/.test(path)) {
     return { kind: "file", src: trimmed };
   }

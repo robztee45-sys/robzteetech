@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import studio from "@/assets/about-studio.jpg";
+import portrait from "@/assets/about-portrait.jpg";
 import { Reveal } from "@/components/site/Reveal";
 import {
   CtaBand,
@@ -53,11 +53,11 @@ function AboutPage() {
           <Reveal>
             <div className="viewfinder overflow-hidden rounded-3xl p-3">
               <img
-                src={studio}
-                alt="Robztetech editing suite with colour-grading monitors and a cinema camera"
-                width={1200}
-                height={1504}
-                className="aspect-[4/5] w-full rounded-2xl object-cover"
+                src={portrait}
+                alt="Portrait of the founder of Robztetech, standing in a navy three-piece suit"
+                width={900}
+                height={1200}
+                className="aspect-[3/4] w-full rounded-2xl object-cover object-top"
               />
             </div>
           </Reveal>

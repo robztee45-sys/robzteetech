@@ -1,4 +1,4 @@
-import { Instagram, Linkedin, Mail } from "lucide-react";
+import { Instagram, Linkedin, Mail, MessageCircle } from "lucide-react";
 import { site } from "@/config/site";
 import { cn } from "@/lib/utils";
 
@@ -11,11 +11,17 @@ function FiverrIcon({ className }: { className?: string }) {
   );
 }
 
+/** Opens a WhatsApp chat with the studio, with a friendly pre-filled opener. */
+export const whatsappLink = `https://wa.me/${site.whatsapp}?text=${encodeURIComponent(
+  "Hi Robztetech, I'd like to talk about a video project.",
+)}`;
+
 export const socialItems = [
   { label: "Fiverr", href: site.links.fiverr, icon: FiverrIcon },
   { label: "LinkedIn", href: site.links.linkedin, icon: Linkedin },
   { label: "Instagram", href: site.links.instagram, icon: Instagram },
   { label: "Email", href: `mailto:${site.email}`, icon: Mail },
+  { label: "WhatsApp", href: whatsappLink, icon: MessageCircle },
 ];
 
 export function SocialLinks({ className }: { className?: string }) {

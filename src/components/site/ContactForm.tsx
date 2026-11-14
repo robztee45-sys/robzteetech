@@ -3,6 +3,7 @@ import { CheckCircle2, Send } from "lucide-react";
 import { useState } from "react";
 import { Controller, useForm } from "react-hook-form";
 import { toast } from "sonner";
+import { whatsappLink } from "@/components/site/SocialLinks";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -95,6 +96,15 @@ export function ContactForm() {
             className="text-primary underline-offset-4 hover:underline"
           >
             {site.email}
+          </a>{" "}
+          or message me on{" "}
+          <a
+            href={whatsappLink}
+            target="_blank"
+            rel="noreferrer"
+            className="text-primary underline-offset-4 hover:underline"
+          >
+            WhatsApp
           </a>
           .
         </p>

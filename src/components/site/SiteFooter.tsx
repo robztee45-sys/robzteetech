@@ -1,7 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { navItems, site } from "@/config/site";
 import { Logo } from "./Logo";
-import { SocialLinks } from "./SocialLinks";
+import { SocialLinks, whatsappLink } from "./SocialLinks";
 
 export function SiteFooter() {
   return (
@@ -37,6 +37,14 @@ export function SiteFooter() {
               className="block text-foreground transition-colors hover:text-primary"
             >
               {site.email}
+            </a>
+            <a
+              href={whatsappLink}
+              target="_blank"
+              rel="noreferrer"
+              className="mt-2 block text-foreground transition-colors hover:text-primary"
+            >
+              WhatsApp {site.whatsappDisplay}
             </a>
             <Link
               to="/contact"

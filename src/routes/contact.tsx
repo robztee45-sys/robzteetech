@@ -1,8 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Clock, Mail } from "lucide-react";
+import { Clock, Mail, MessageCircle } from "lucide-react";
 import { ContactForm } from "@/components/site/ContactForm";
 import { Reveal } from "@/components/site/Reveal";
-import { socialItems } from "@/components/site/SocialLinks";
+import { socialItems, whatsappLink } from "@/components/site/SocialLinks";
 import { site } from "@/config/site";
 
 export const Route = createFileRoute("/contact")({
@@ -54,6 +54,20 @@ function ContactPage() {
                 <span className="block">{site.email}</span>
               </span>
             </a>
+            <a
+              href={whatsappLink}
+              target="_blank"
+              rel="noreferrer"
+              className="flex items-center gap-4 rounded-2xl border border-border bg-surface/60 p-5 transition-colors hover:border-primary/50"
+            >
+              <MessageCircle className="size-5 text-primary" />
+              <span>
+                <span className="block text-xs uppercase tracking-[0.18em] text-muted-foreground">
+                  WhatsApp
+                </span>
+                <span className="block">{site.whatsappDisplay}</span>
+              </span>
+            </a>
             <div className="flex items-center gap-4 rounded-2xl border border-border bg-surface/60 p-5">
               <Clock className="size-5 text-primary" />
               <span>
@@ -68,18 +82,20 @@ function ContactPage() {
           <Reveal delay={280} className="mt-10">
             <p className="eyebrow mb-4 text-muted-foreground">Find me on</p>
             <div className="grid grid-cols-2 gap-3">
-              {socialItems.map(({ label, href, icon: Icon }) => (
-                <a
-                  key={label}
-                  href={href}
-                  target={href.startsWith("mailto:") ? undefined : "_blank"}
-                  rel="noreferrer"
-                  className="group flex items-center gap-3 rounded-xl border border-border px-4 py-3 text-sm text-muted-foreground transition-all duration-500 ease-cinematic hover:border-primary/50 hover:text-foreground"
-                >
-                  <Icon className="size-4 text-primary" />
-                  {label}
-                </a>
-              ))}
+              {socialItems
+                .filter((item) => item.label !== "WhatsApp")
+                .map(({ label, href, icon: Icon }) => (
+                  <a
+                    key={label}
+                    href={href}
+                    target={href.startsWith("mailto:") ? undefined : "_blank"}
+                    rel="noreferrer"
+                    className="group flex items-center gap-3 rounded-xl border border-border px-4 py-3 text-sm text-muted-foreground transition-all duration-500 ease-cinematic hover:border-primary/50 hover:text-foreground"
+                  >
+                    <Icon className="size-4 text-primary" />
+                    {label}
+                  </a>
+                ))}
             </div>
           </Reveal>
         </div>

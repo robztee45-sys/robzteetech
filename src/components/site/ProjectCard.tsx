@@ -64,6 +64,8 @@ export function ProjectCard({ project, onPlay, size = "default", className }: Pr
           />
         ) : null}
         <div className="absolute inset-0 bg-card-scrim" />
+        {/* keeps the badges and duration readable over bright thumbnails */}
+        <div className="pointer-events-none absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-black/55 to-transparent" />
 
         <div className="absolute inset-x-4 top-4 flex flex-wrap items-center gap-2">
           <span className="rounded-full border border-foreground/15 bg-scrim/60 px-3 py-1 font-mono text-[0.65rem] uppercase tracking-[0.18em] text-foreground backdrop-blur-md">

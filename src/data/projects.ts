@@ -1,11 +1,17 @@
-import product from "@/assets/work-product.jpg";
-import ugc from "@/assets/work-ugc.jpg";
 import cinematic from "@/assets/work-cinematic.jpg";
 import animation from "@/assets/work-3d.jpg";
 import voxel from "@/assets/work-voxel.jpg";
 import education from "@/assets/work-education.jpg";
 import reel from "@/assets/hero-reel.mp4.asset.json";
 import voxelLoop from "@/assets/voxel-loop.mp4";
+import accessoriesThumb from "@/assets/work-ugc-accessories.jpg";
+import accessoriesVideo from "@/assets/work-ugc-accessories.mp4";
+import ecobottleThumb from "@/assets/work-ugc-ecobottle.jpg";
+import ecobottleVideo from "@/assets/work-ugc-ecobottle.mp4";
+import carThumb from "@/assets/work-product-electric-car.jpg";
+import carVideo from "@/assets/work-product-electric-car.mp4";
+import lumidentThumb from "@/assets/work-product-lumident.jpg";
+import lumidentVideo from "@/assets/work-product-lumident.mp4";
 
 /**
  * PORTFOLIO PROJECTS — replace these samples with your own work.
@@ -44,31 +50,53 @@ export type Project = {
 const sampleReel = reel.url;
 
 export const projects: Project[] = [
+  // ── Product Commercials ──────────────────────────────────────────────
   {
-    id: "noir-fragrance",
-    title: "Noir — Fragrance Launch Spot",
+    id: "electric-sedan-showroom",
+    title: "Electric Sedan — Showroom to Skyline",
     category: "Product Commercials",
     description:
-      "Sample concept: a slow-motion, water-splash hero commercial for a luxury fragrance brand.",
-    thumbnail: product,
-    video: sampleReel,
-    duration: "0:30",
+      "A presenter-led car commercial that moves from a spotlit studio to a golden-hour city overlook.",
+    thumbnail: carThumb,
+    video: carVideo,
+    duration: "0:22",
     format: "16:9",
-    sample: true,
     featured: true,
   },
   {
-    id: "glow-serum-ugc",
-    title: "Glow Serum — Creator Testimonial",
+    id: "lumident-toothpaste",
+    title: "Lumident — Toothpaste Product Spot",
+    category: "Product Commercials",
+    description:
+      "A cinematic product commercial with stage lighting, fluid foam close-ups and a clean hero pack shot.",
+    thumbnail: lumidentThumb,
+    video: lumidentVideo,
+    duration: "0:36",
+    format: "16:9",
+  },
+  // ── AI UGC Advertisements ────────────────────────────────────────────
+  {
+    id: "ecobottle-creator-ad",
+    title: "EcoBottle — Creator-Style Ad",
     category: "AI UGC Advertisements",
     description:
-      "Sample concept: an AI spokesperson delivers a relaxed at-home review for a skincare product.",
-    thumbnail: ugc,
-    video: sampleReel,
-    duration: "0:45",
-    format: "9:16",
-    sample: true,
+      "An AI spokesperson shows off a smart reusable bottle, then the ad cuts to the gym to put it to work.",
+    thumbnail: ecobottleThumb,
+    video: ecobottleVideo,
+    duration: "0:22",
+    format: "16:9",
     featured: true,
+  },
+  {
+    id: "accessories-ai-presenter",
+    title: "Accessories — AI Presenter Ad",
+    category: "AI UGC Advertisements",
+    description:
+      "An AI presenter introduces a fashion accessories line, cutting between jewellery and eyewear close-ups.",
+    thumbnail: accessoriesThumb,
+    video: accessoriesVideo,
+    duration: "0:22",
+    format: "16:9",
   },
   {
     id: "the-last-signal",

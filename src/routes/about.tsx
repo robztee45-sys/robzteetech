@@ -1,7 +1,13 @@
 import { createFileRoute } from "@tanstack/react-router";
 import studio from "@/assets/about-studio.jpg";
 import { Reveal } from "@/components/site/Reveal";
-import { CtaBand, PageHero, ProcessSection, ToolsSection, WhySection } from "@/components/site/sections";
+import {
+  CtaBand,
+  PageHero,
+  ProcessSection,
+  ToolsSection,
+  WhySection,
+} from "@/components/site/sections";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -12,7 +18,10 @@ export const Route = createFileRoute("/about")({
         content:
           "Robztetech combines AI, creative direction and digital production to create engaging videos for brands, businesses, entrepreneurs and creators.",
       },
-      { property: "og:title", content: "About Robztetech — Creativity Meets Artificial Intelligence" },
+      {
+        property: "og:title",
+        content: "About Robztetech — Creativity Meets Artificial Intelligence",
+      },
       {
         property: "og:description",
         content: "An AI-powered creative video production brand built around visual storytelling.",
@@ -31,7 +40,11 @@ function AboutPage() {
     <>
       <PageHero
         eyebrow="About Robztetech"
-        title={<>Creativity meets <span className="text-signal">artificial intelligence.</span></>}
+        title={
+          <>
+            Creativity meets <span className="text-signal">artificial intelligence.</span>
+          </>
+        }
         intro="Robztetech is an AI-powered creative video production brand focused on bringing ideas to life through innovative visual storytelling."
       />
 
@@ -61,7 +74,10 @@ function AboutPage() {
                 experiences.
               </p>
             </Reveal>
-            <Reveal delay={150} className="mt-12 grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-border bg-border">
+            <Reveal
+              delay={150}
+              className="mt-12 grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-border bg-border"
+            >
               {focus.map((f, i) => (
                 <div key={f} className="bg-background p-6">
                   <p className="font-mono text-xs text-primary">0{i + 1}</p>

@@ -6,7 +6,13 @@ import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
 import { site } from "@/config/site";
 import { budgetRanges, videoTypes } from "@/data/content";
@@ -84,7 +90,10 @@ export function ContactForm() {
         <p className="mt-3 max-w-md text-muted-foreground">
           Your email app should have opened with your project details. Just press send and I’ll get
           back to you soon. If nothing opened, email{" "}
-          <a href={`mailto:${site.email}`} className="text-primary underline-offset-4 hover:underline">
+          <a
+            href={`mailto:${site.email}`}
+            className="text-primary underline-offset-4 hover:underline"
+          >
             {site.email}
           </a>
           .
@@ -103,13 +112,32 @@ export function ContactForm() {
       className="grid gap-5 rounded-3xl border border-border bg-surface p-6 shadow-card md:grid-cols-2 md:p-10"
     >
       <Field id="fullName" label="Full Name" error={errors.fullName?.message}>
-        <Input id="fullName" autoComplete="name" placeholder="Jane Doe" className={fieldClass} {...register("fullName")} />
+        <Input
+          id="fullName"
+          autoComplete="name"
+          placeholder="Jane Doe"
+          className={fieldClass}
+          {...register("fullName")}
+        />
       </Field>
       <Field id="email" label="Email Address" error={errors.email?.message}>
-        <Input id="email" type="email" autoComplete="email" placeholder="jane@brand.com" className={fieldClass} {...register("email")} />
+        <Input
+          id="email"
+          type="email"
+          autoComplete="email"
+          placeholder="jane@brand.com"
+          className={fieldClass}
+          {...register("email")}
+        />
       </Field>
       <Field id="company" label="Company or Brand Name" optional error={errors.company?.message}>
-        <Input id="company" autoComplete="organization" placeholder="Your brand" className={fieldClass} {...register("company")} />
+        <Input
+          id="company"
+          autoComplete="organization"
+          placeholder="Your brand"
+          className={fieldClass}
+          {...register("company")}
+        />
       </Field>
       <Field id="videoType" label="Type of Video Needed" error={errors.videoType?.message}>
         <Controller
@@ -117,7 +145,11 @@ export function ContactForm() {
           name="videoType"
           render={({ field }) => (
             <Select value={field.value ?? ""} onValueChange={field.onChange}>
-              <SelectTrigger id="videoType" className={cn(fieldClass, "w-full")} onBlur={field.onBlur}>
+              <SelectTrigger
+                id="videoType"
+                className={cn(fieldClass, "w-full")}
+                onBlur={field.onBlur}
+              >
                 <SelectValue placeholder="Select a video type" />
               </SelectTrigger>
               <SelectContent>
@@ -131,7 +163,12 @@ export function ContactForm() {
           )}
         />
       </Field>
-      <Field id="description" label="Project Description" error={errors.description?.message} className="md:col-span-2">
+      <Field
+        id="description"
+        label="Project Description"
+        error={errors.description?.message}
+        className="md:col-span-2"
+      >
         <Textarea
           id="description"
           rows={6}
@@ -161,16 +198,39 @@ export function ContactForm() {
         />
       </Field>
       <Field id="deadline" label="Preferred Deadline" optional error={errors.deadline?.message}>
-        <Input id="deadline" type="date" className={cn(fieldClass, "[color-scheme:dark]")} {...register("deadline")} />
+        <Input
+          id="deadline"
+          type="date"
+          className={cn(fieldClass, "[color-scheme:dark]")}
+          {...register("deadline")}
+        />
       </Field>
-      <Field id="reference" label="Reference Video or Inspiration Link" optional error={errors.reference?.message} className="md:col-span-2">
-        <Input id="reference" type="url" placeholder="https://..." className={fieldClass} {...register("reference")} />
+      <Field
+        id="reference"
+        label="Reference Video or Inspiration Link"
+        optional
+        error={errors.reference?.message}
+        className="md:col-span-2"
+      >
+        <Input
+          id="reference"
+          type="url"
+          placeholder="https://..."
+          className={fieldClass}
+          {...register("reference")}
+        />
       </Field>
       <div className="flex flex-col gap-4 pt-2 md:col-span-2 md:flex-row md:items-center md:justify-between">
         <p className="text-xs text-muted-foreground">
           Submitting opens your email app with everything filled in, addressed to {site.email}.
         </p>
-        <Button type="submit" variant="hero" size="xl" disabled={isSubmitting} className="w-full md:w-auto">
+        <Button
+          type="submit"
+          variant="hero"
+          size="xl"
+          disabled={isSubmitting}
+          className="w-full md:w-auto"
+        >
           Send Project Inquiry <Send />
         </Button>
       </div>

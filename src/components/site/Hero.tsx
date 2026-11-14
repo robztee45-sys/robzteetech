@@ -51,7 +51,10 @@ export function Hero() {
           From cinematic storytelling to high-converting product advertisements, Robztetech uses
           AI-powered creativity to transform concepts into engaging visual content.
         </p>
-        <div className="mt-10 flex animate-fade-up flex-wrap gap-3" style={{ animationDelay: "1100ms" }}>
+        <div
+          className="mt-10 flex animate-fade-up flex-wrap gap-3"
+          style={{ animationDelay: "1100ms" }}
+        >
           <Button asChild variant="hero" size="xl">
             <Link to="/portfolio">
               <Play className="fill-current" /> Explore My Work

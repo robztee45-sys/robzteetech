@@ -36,5 +36,10 @@ export default tseslint.config(
       "@typescript-eslint/no-unused-vars": "off",
     },
   },
+  {
+    // shadcn/ui primitives and SocialLinks export helpers (variants, items) next to components by design.
+    files: ["src/components/ui/**/*.{ts,tsx}", "src/components/site/SocialLinks.tsx"],
+    rules: { "react-refresh/only-export-components": "off" },
+  },
   eslintPluginPrettier,
 );

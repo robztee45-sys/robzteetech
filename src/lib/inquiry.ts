@@ -5,13 +5,23 @@ const optionalUrl = z
   .string()
   .trim()
   .max(500, "Link is too long")
-  .refine((v) => v === "" || /^https?:\/\/\S+\.\S+/.test(v), "Enter a full link starting with http:// or https://");
+  .refine(
+    (v) => v === "" || /^https?:\/\/\S+\.\S+/.test(v),
+    "Enter a full link starting with http:// or https://",
+  );
 
 export const inquirySchema = z.object({
   fullName: z.string().trim().min(2, "Please enter your full name").max(100, "Name is too long"),
-  email: z.string().trim().min(1, "Please enter your email").email("Enter a valid email address").max(255),
+  email: z
+    .string()
+    .trim()
+    .min(1, "Please enter your email")
+    .email("Enter a valid email address")
+    .max(255),
   company: z.string().trim().max(120, "Company name is too long"),
-  videoType: z.enum(videoTypes, { errorMap: () => ({ message: "Choose the type of video you need" }) }),
+  videoType: z.enum(videoTypes, {
+    errorMap: () => ({ message: "Choose the type of video you need" }),
+  }),
   description: z
     .string()
     .trim()

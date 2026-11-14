@@ -48,14 +48,18 @@ function ContactPage() {
             >
               <Mail className="size-5 text-primary" />
               <span>
-                <span className="block text-xs uppercase tracking-[0.18em] text-muted-foreground">Email</span>
+                <span className="block text-xs uppercase tracking-[0.18em] text-muted-foreground">
+                  Email
+                </span>
                 <span className="block">{site.email}</span>
               </span>
             </a>
             <div className="flex items-center gap-4 rounded-2xl border border-border bg-surface/60 p-5">
               <Clock className="size-5 text-primary" />
               <span>
-                <span className="block text-xs uppercase tracking-[0.18em] text-muted-foreground">Response</span>
+                <span className="block text-xs uppercase tracking-[0.18em] text-muted-foreground">
+                  Response
+                </span>
                 <span className="block">I reply to every inquiry personally.</span>
               </span>
             </div>

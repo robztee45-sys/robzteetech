@@ -3,6 +3,7 @@ import { ArrowRight, ArrowUpRight } from "lucide-react";
 import { useState } from "react";
 import studio from "@/assets/about-studio.jpg";
 import { Hero } from "@/components/site/Hero";
+import { MarqueeBand } from "@/components/site/MarqueeBand";
 import { ProjectCard } from "@/components/site/ProjectCard";
 import { Reveal } from "@/components/site/Reveal";
 import { SectionHeading } from "@/components/site/SectionHeading";
@@ -14,6 +15,7 @@ import {
   WhySection,
 } from "@/components/site/sections";
 import { VideoModal } from "@/components/site/VideoModal";
+import { VoxelWorld } from "@/components/site/VoxelWorld";
 import { Button } from "@/components/ui/button";
 import { projects, type Project } from "@/data/projects";
 import { services } from "@/data/services";
@@ -30,7 +32,8 @@ export const Route = createFileRoute("/")({
       { property: "og:title", content: "Robztetech — AI Video Production Studio" },
       {
         property: "og:description",
-        content: "Turning ideas into visual experiences with AI-powered cinematic video production.",
+        content:
+          "Turning ideas into visual experiences with AI-powered cinematic video production.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -46,6 +49,7 @@ function Index() {
   return (
     <>
       <Hero />
+      <MarqueeBand />
 
       {/* About teaser */}
       <section className="relative py-24 md:py-36">
@@ -62,7 +66,9 @@ function Index() {
               />
             </div>
             <div className="absolute -bottom-6 -right-2 rounded-2xl border border-border bg-surface/90 px-5 py-4 backdrop-blur-xl md:-right-8">
-              <p className="font-mono text-[0.65rem] uppercase tracking-[0.2em] text-muted-foreground">Now booking</p>
+              <p className="font-mono text-[0.65rem] uppercase tracking-[0.2em] text-muted-foreground">
+                Now booking
+              </p>
               <p className="mt-1 font-display text-lg">New projects</p>
             </div>
           </Reveal>
@@ -71,10 +77,13 @@ function Index() {
               eyebrow="About Robztetech"
               title="Creativity meets artificial intelligence."
             />
-            <Reveal delay={120} className="mt-8 space-y-5 text-pretty leading-relaxed text-muted-foreground md:text-lg">
+            <Reveal
+              delay={120}
+              className="mt-8 space-y-5 text-pretty leading-relaxed text-muted-foreground md:text-lg"
+            >
               <p>
-                Robztetech is an AI-powered creative video production brand focused on bringing ideas
-                to life through innovative visual storytelling.
+                Robztetech is an AI-powered creative video production brand focused on bringing
+                ideas to life through innovative visual storytelling.
               </p>
               <p>
                 I combine artificial intelligence, creative direction, and digital production
@@ -143,7 +152,11 @@ function Index() {
         <div className="container-studio">
           <SectionHeading
             eyebrow="Portfolio"
-            title={<>Selected <span className="text-signal">creative works.</span></>}
+            title={
+              <>
+                Selected <span className="text-signal">creative works.</span>
+              </>
+            }
             intro="Hover to preview, click to watch."
             action={
               <Button asChild variant="hero" size="xl">
@@ -156,7 +169,12 @@ function Index() {
           <div className="mt-14 grid gap-5 lg:grid-cols-2">
             {featured[0] ? (
               <Reveal className="lg:row-span-2">
-                <ProjectCard project={featured[0]} onPlay={setActive} size="large" className="h-full [&>div]:h-full [&>div]:aspect-auto lg:[&>div]:min-h-[560px]" />
+                <ProjectCard
+                  project={featured[0]}
+                  onPlay={setActive}
+                  size="large"
+                  className="h-full [&>div]:h-full [&>div]:aspect-auto lg:[&>div]:min-h-[560px]"
+                />
               </Reveal>
             ) : null}
             {featured.slice(1).map((p, i) => (
@@ -168,6 +186,7 @@ function Index() {
         </div>
       </section>
 
+      <VoxelWorld />
       <ProcessSection />
       <ToolsSection />
       <WhySection />

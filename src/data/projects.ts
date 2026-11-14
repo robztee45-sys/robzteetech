@@ -5,6 +5,7 @@ import animation from "@/assets/work-3d.jpg";
 import voxel from "@/assets/work-voxel.jpg";
 import education from "@/assets/work-education.jpg";
 import reel from "@/assets/hero-reel.mp4.asset.json";
+import voxelLoop from "@/assets/voxel-loop.mp4";
 
 /**
  * PORTFOLIO PROJECTS — replace these samples with your own work.
@@ -101,7 +102,7 @@ export const projects: Project[] = [
     description:
       "Sample concept: an epic cinematic trailer for a block-built fantasy kingdom at golden hour.",
     thumbnail: voxel,
-    video: sampleReel,
+    video: voxelLoop,
     duration: "1:05",
     format: "16:9",
     sample: true,

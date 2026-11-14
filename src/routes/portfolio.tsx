@@ -28,7 +28,11 @@ function PortfolioPage() {
     <>
       <PageHero
         eyebrow="Portfolio"
-        title={<>Selected <span className="text-signal">creative works.</span></>}
+        title={
+          <>
+            Selected <span className="text-signal">creative works.</span>
+          </>
+        }
         intro="Filter by category, hover to preview and click any project to watch. Projects marked “Sample” are concept placeholders while new client work is being added."
       />
       <section className="pb-24 md:pb-32">
